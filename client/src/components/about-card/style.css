@@ -1,0 +1,31 @@
+.about-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 336px;
+    align-items: flex-start;
+    gap: 4px;
+    flex: 1 0 0;
+}
+
+.about-card-title{
+    color: var(--main-primary, #FF4D4D);
+    font-feature-settings: 'salt' on, 'liga' off;
+
+    /* Heading / H2 */
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 64px; /* 133.333% */
+}
+
+.about-card-body{
+    color: var(--grayscale-1000, #0F1113);
+    font-feature-settings: 'salt' on, 'liga' off;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+}

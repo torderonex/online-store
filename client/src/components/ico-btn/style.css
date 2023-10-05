@@ -1,0 +1,14 @@
+.ico-btn{
+    width: 52px;
+    height: 52px;
+    padding: 14px;
+    border-radius: 8px;
+    border: 0;
+    background-color: #F2F5F9;
+    cursor:pointer;
+}
+.ico-btn img{
+    width: 24px;
+    height: 24px;
+   
+}

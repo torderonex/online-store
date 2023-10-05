@@ -1,0 +1,112 @@
+.dropdown{
+    background-color:#FF4D4D;
+    border: 0;
+    position: relative;
+    color: white;
+    font-style: "Inter";
+    height: 42px;
+    border-bottom-left-radius:5px;
+    border-top-left-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    z-index: 100;
+    align-items: center;
+}
+
+
+.dropdown:hover {
+    background-color: #cf3e3e;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown img{
+  transition: transform 0.2s linear; ;
+    width: 20px;
+    height: 20px;
+}
+
+.menu{
+    top:64px;
+    left: 0;
+    width: 100%;
+    max-width: 1920px;
+    background: linear-gradient(to bottom right,#ff7070 , #F2F5F9,white  );    
+    position: absolute;
+    font-size: 20px;
+    z-index: 91;
+    border-bottom: 1px #F5F7FA solid;
+    border-top: 1px #F5F7FA solid;
+    display: none;
+    transition: all 2s linear;
+}
+
+  
+.menu.open{
+  transition: all 2s linear;
+  display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 90;
+  }
+
+  .isOpen .dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    padding: 0;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .menu {
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: fadeIn 0.5s ease-in-out forwards; /* Применяем анимацию */
+  }
+  
+  /* Добавьте класс "open" для изменения стиля меню при открытии */
+  .menu.open {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Определение анимации закрытия */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+
+/* Применение анимации к элементу с классом "menu" при закрытии */
+.menu.closing {
+  animation: fadeOut 0.5s ease-in-out forwards; /* Применяем анимацию */
+}

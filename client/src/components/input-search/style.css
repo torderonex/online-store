@@ -1,0 +1,25 @@
+form {
+    position: relative;
+    margin: 0 auto;
+  }
+
+.input_search{
+  width: 641px;
+  height: 42px;
+  padding-left: 50px;
+  border: 0;
+  border-radius: 5px;
+  outline: none;
+  background: #F2F5F9;
+  color: #A1ABB9;
+}
+
+form .search_button{
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background-color: #F2F5F9;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }

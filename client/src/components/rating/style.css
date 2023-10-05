@@ -1,0 +1,20 @@
+.rate-bar{
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #F6F7FA;
+    width: 281px;
+    height: 24px;
+    gap: 8px;
+    border: 1px solid #F6F7FA;
+    border-radius:12px ;
+    align-items: center;
+
+}
+
+
+.rate-bar p{
+    color : #7E8794;
+    font-size: 16px;
+    line-height: 20px;
+}

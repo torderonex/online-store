@@ -1,0 +1,45 @@
+.red-half{
+    background: var(--red-light, #FF4D4D);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 48px;
+    width: 381px;
+    height: 307px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.gray-half{
+    background: #F2F5F9;
+    display: flex;
+    padding: 48px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    width: 381px;
+    height: 307px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius:12px;
+}
+
+.login-footer{
+    display: flex;
+    width: 100% ;
+    justify-content: space-between;
+}
+
+.signup-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 126px 0;
+    border-radius: 12px;
+}
+
+.gap-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

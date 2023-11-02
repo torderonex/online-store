@@ -12,9 +12,13 @@
 
 }
 
+.rate-bar div{
+    display: flex;
+}
 
 .rate-bar p{
     color : #7E8794;
     font-size: 16px;
     line-height: 20px;
+    font-weight: 400;
 }

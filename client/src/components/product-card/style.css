@@ -9,15 +9,42 @@
     border: 1px solid#F2F5F9;
     background: white;
     width: 430px;
-    height: 258;
+    /* margin: 0; */
 }
 
 .product-card:hover{
-    border: 1px solid#7E8794;
+    border: 1px solid#9b9c9f;
+}
+
+.category-name{
+    width: 100%;
+}
+.h5-icons
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.price-rating p{
+    color: var(--grayscale-1000, #0F1113);
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+}
+
+.price-cart{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .product-card h5{
-    color: var(--grayscale-600, #7E8794);
+    color:  #7E8794;
     font-feature-settings: 'salt' on, 'liga' off;
     font-family: Inter;
     font-size: 14px;
@@ -58,3 +85,80 @@
     flex-direction: column;
     margin: 0 auto;
 }
+
+.product-card.long{
+    width: 900px;
+}
+
+.product-card.long .product-info{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.product-card.long .price-rating{
+    margin: 0;
+}
+
+.product-card.long .product-img{
+    width: 200px;
+    height: 200px;
+}
+
+.product-card.long{
+    flex-direction: row;
+}
+
+.product-card.long .product-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.rating-icons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-card.long .name-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-card.long .category-name{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    justify-content: space-between;
+}
+
+.product-card.long .main-btn{
+    width: 50%;
+}
+
+.product-card.long  h3{
+    color: #0F1113;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px; /* 133.333% */
+}
+
+.product-card.long  h3:hover{
+    color: #FF4D4D;
+    cursor: pointer;
+}
+
+/* @media screen and (max-width: 450px) {
+    .product-card{
+        padding: 10px;
+       
+        width:auto;
+    }
+
+    .product-card .main-btn{
+        display: none;
+    }
+    .product-card .rate-bar{
+        display: none;
+    }
+} */

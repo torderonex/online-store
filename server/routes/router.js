@@ -1,21 +1,25 @@
 import {Router} from 'express'
 import UserController from '../controllers/UserController.js'
+import BrandController from '../controllers/BrandController.js'
+import TypeController from '../controllers/TypeController.js'
+import CartController from '../controllers/CartController.js'
+import DeviceController from '../controllers/DeviceController.js'
 
 const router = new Router()
 
 
 //device routes
-router.get('/device/:id')
-router.get('/device')
-router.post('/device')
+router.get('/device/:id', DeviceController.getOne)
+router.get('/device', DeviceController.getAll)
+router.post('/device', )
 
 //brand routes
 router.get('/brand')
-router.post('/brand')
+router.post('/brand', BrandController.create)
 
 //type routes
 router.get('/type')
-router.post('/type')
+router.post('/type', TypeController.create)
 
 //user routes
 router.get('/user/auth')

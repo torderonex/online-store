@@ -23,15 +23,18 @@
 }
 
 .category-list{
-    display: flex;
+    display: grid;
     width: 1440px;
-    justify-content: space-between;
-    align-items: flex-start;
+    grid-template-columns: repeat(8, auto);
+}
 
+.category-item{
+    padding: 0 20px;
 }
 
 .product-cards {
     display: grid;
+    margin-top: 20px;
     grid-template-columns: repeat(3, 1fr); /* Две колонки */
     grid-gap: 16px; /* Расстояние между карточками */
 }
@@ -45,14 +48,15 @@
     display: flex;
 }
 
-@media screen and (max-width: 1400px) {
-    .product-cards{
-        grid-template-columns: repeat(2, 1fr); /* Две колонки */
-    }   
-    .category-list{
-        width: 100%;
-        flex-wrap: wrap;
+.sldr{
+}
+
+@media (max-width: 1500px) {
+    .product-card{
+        margin-top:60px;
+        margin-left: 40px;   
     }
+    
     .banners{
         align-items: center;
         flex-direction: column;
@@ -61,15 +65,28 @@
         margin-top: 30px; 
      }
      .about-cards{
-        display: flex;
-        flex-wrap: wrap;
+        /* display: flex; */
+       display: grid;
+       grid-template-columns: repeat(2, auto); /* Две колонки */
+        align-items: center;
+        justify-items: center;
+        /* flex-wrap: wrap; */
      }
 }
-@media screen and (max-width: 950px) {
+/* @media screen and (max-width: 1205px) {
     .product-cards{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
     }   
+} */
+
+@media screen and (max-width: 700px) {
+    .about-cards{
+       display: grid;
+       grid-template-columns: repeat(1, auto); /* Две колонки */
+        align-items: center;
+        justify-items: center;
+     }
 }

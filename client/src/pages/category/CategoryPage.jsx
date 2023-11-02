@@ -1,17 +1,30 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Slider from 'react-slider'
+import { useResize } from '../../hooks/useResize';
 
 import './style.css' 
 import SliderButton from '../../components/radio/SliderButton';
 import ProductCard from '../../components/product-card/ProductCard';
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 const MIN = 100;
 const MAX = 12000;
 
 export default function CategoryPage() {
     const [values, setValues] = useState([MIN,MAX])
-
     const [flag, setFlag] = useState(false);
+    const [isLong, setIsLong] = useState(true);
+
+    const isWide = useMediaQuery('(min-width : 1500px )');
+
+    useEffect(() =>{
+        if(!isWide ){
+            setIsLong(false)
+        }
+        if(isWide){
+            setIsLong(true)
+        }
+    }, [isWide])
 
     const mockItem = {
         type: 'Смартфоны',
@@ -61,12 +74,12 @@ export default function CategoryPage() {
                 </div>
 
                 <div className="items">
-                    <ProductCard product={mockItem}/>
-                    <ProductCard product={mockItem}/>
-                    <ProductCard product={mockItem}/>
-                    <ProductCard product={mockItem}/>
-                    <ProductCard product={mockItem}/>
-                    <ProductCard product={mockItem}/>
+                    <ProductCard product={mockItem} long={isLong}/>
+                    <ProductCard product={mockItem} long={isLong}/>
+                    <ProductCard product={mockItem} long={isLong}/>
+                    <ProductCard product={mockItem} long={isLong}/>
+                    <ProductCard product={mockItem} long={isLong}/>
+                    <ProductCard product={mockItem} long={isLong}/>
                     <ProductCard product={mockItem}/>
                     <ProductCard product={mockItem}/>
                 </div>

@@ -1,9 +1,9 @@
 import React from 'react'
 import './style.css'
 
-export default function Button({text,onlclick, white}) {
+export default function Button({text,onClick, white}) {
   return (
-    <button className={['main-btn', white ? 'white' : ' '  ].join(' ')} onClick={onlclick}>
+    <button className={['main-btn', white ? 'white' : ' '  ].join(' ')} onClick={onClick}>
         {text} 
         <img src="arrow-right.svg"/>
     </button>

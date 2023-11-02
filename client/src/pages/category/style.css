@@ -78,6 +78,7 @@
 .category-items{
     display: flex;
     margin: 40px 0;
+    justify-content: space-between;
 
 }
 
@@ -100,9 +101,22 @@
 }
 
 .category-items .items{
-    margin-left: 200px;
+    width: auto;
+    margin: 0 auto;
 }
 
 .category-items .items .product-card{
     margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+    .category-items{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .filter {
+        width: 100%;
+    }
+
 }

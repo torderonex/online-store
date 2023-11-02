@@ -2,9 +2,9 @@ import React from 'react'
 
 import './style.css' 
 
-export default function IconButton({className, iconPath, onclick }) {
+export default function IconButton({onClick, className, iconPath, small }) {
   return (
-    <button className={'ico-btn ' + className}   onClick={onclick}>
+    <button className={['ico-btn', className, small ? 'small' : '' ].join(' ')}   onClick={onClick}>
         <img src={iconPath}/>
     </button>
   )

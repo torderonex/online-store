@@ -35,13 +35,15 @@
     left: 0;
     width: 100%;
     max-width: 1920px;
-    background: linear-gradient(to bottom right,#ff7070 , #F2F5F9,white  );    
+    /* background: linear-gradient(to bottom right,#ff7070 , #F2F5F9,white  );     */
+    background:white;
     position: absolute;
     font-size: 20px;
     z-index: 91;
     border-bottom: 1px #F5F7FA solid;
     border-top: 1px #F5F7FA solid;
     display: none;
+    padding: 40px;
     transition: all 2s linear;
 }
 

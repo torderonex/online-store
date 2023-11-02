@@ -15,6 +15,7 @@ header{
 .logo_info img{
     width: 186px;
     height: 60px;
+    cursor: pointer;
 }
 
 .logo_info p {
@@ -47,7 +48,7 @@ header{
 }
 
 .dropdown-list h2{
-    color: var(--primary-dark, #263141);
+    color: black;
     font-size: 34.619px;
     font-style: normal;
     font-weight: 700;
@@ -58,9 +59,9 @@ header{
 
     list-style: none;
     border-radius: 12px;
-    background: #F5F7FA;
+    background: #F2F5F9;
     padding: 5px 6px;
-    border:  1px #263141 solid;
+    border:  1px #d2d4d6 solid;
 }
 
 .dropdown-list li{
@@ -71,10 +72,10 @@ header{
     font-style: normal;
     font-weight: 400;
     line-height: 18px; /* 128.571% */
-    padding: 8px 8px;
+    padding: 8px 40px;
     cursor: pointer;
     line-height: 20px; /* 142.857% */
-    border-bottom:  1px #263141 solid;
+    border-bottom:  1px #d2d4d6 solid;
 }
 
 .dropdown-list li:hover{
@@ -99,18 +100,24 @@ header{
 
 }
 
-@media screen and (max-width: 1330px) {
+/* @media screen and (max-width: 1330px) {
     .ico-btns{
         display: none;
     }
     .search .dropdown{
         display: none;
     }
-    .search input{
+    .search form{
+        width: 100%;
         border-radius: 5px;
+        width: 300px;
     }
+    .search input{
+        width: 100%;
+    }
+
     header{
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
     }
-}
+} */

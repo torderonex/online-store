@@ -6,6 +6,7 @@ import {config} from 'dotenv'
 config()
 
 const { sign, verify } = jwt;
+
 export default class UserController{
     static async login(req,res,next){
         try{
@@ -41,7 +42,6 @@ export default class UserController{
         }
 
     }
-
 
     static async auth(req,res){
 

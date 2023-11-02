@@ -4,17 +4,19 @@ import './style.css'
 import InputSearch from '../input-search/InputSearch';
 import Dropdown from '../dropdown/Dropdown';
 import IconButton from '../ico-btn/IconButton';
+import {useNavigate} from 'react-router-dom'
 
 export default function Header({isDropdownOpen, setIsDropdownOpen}) {
-    
+    const navigator = useNavigate();
+
     return (
     <div className="container">
          <header>
             <div className="logo_info" >
-                <img src="logo.svg"/>
+                <img onClick={() => navigator('/')} src="logo.svg"/>
                 <p>Лучшие цены<br/> в интернет-магазинах</p>
             </div>
-            <div className='search' >
+            <div className='search'>
                 <Dropdown text="Каталог товаров" isOpen={isDropdownOpen} setIsOpen={setIsDropdownOpen}>
                     <div className="dropdown-menu">
                         <div className="dropdown-list">
@@ -68,7 +70,8 @@ export default function Header({isDropdownOpen, setIsDropdownOpen}) {
             <div className='ico-btns'>
                 <IconButton className='ico-btns-item' iconPath={'heart.svg'}/>
                 <IconButton className='ico-btns-item glasses' iconPath={'glasses.svg'}/>
-                <IconButton className='ico-btns-item' iconPath={'user.svg'}/>
+                <IconButton className='ico-btns-item glasses' iconPath={'chart.svg'}/>
+                <IconButton onClick={() => navigator('/signup')} className='ico-btns-item' iconPath={'user.svg'}/>
             </div>
         </header>  
     </div>

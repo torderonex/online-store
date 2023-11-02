@@ -10,6 +10,7 @@
     overflow: hidden;
     gap: 8px;
     height: 52px;
+    font-weight: 700;
     cursor: pointer;
     transition: .5s cubic-bezier(.165, .84, .44, 1);
   }

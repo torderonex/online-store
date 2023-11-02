@@ -2,7 +2,7 @@ footer{
     background: var(--grayscale-200, #F2F5F9);
     max-width: 1920px;
     min-height: 349px;
-    flex-shrink: 0;
+    width: 100%;
     padding: 41px 0;
 }
 
@@ -36,9 +36,15 @@ footer .container{
     font-weight: 400;
     line-height: 24px; /* 150% */
     margin-top: 16px;
+    cursor: pointer;    
+}
+
+.footer-list li:hover{
+    color : #FF4D4D;
 }
 
 .footer-list li:first-child{
+    cursor: default;
     color: #A1ABB9;
     font-family: Inter;
     font-size: 16px;
@@ -46,4 +52,17 @@ footer .container{
     font-weight: 400;
     line-height: 24px; /* 150% */
     margin-top: 0;
+   
 }   
+
+@media screen and (max-width: 900px) {
+    footer .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-lists{
+        display: flex;
+        flex-direction: column;
+
+    }
+}

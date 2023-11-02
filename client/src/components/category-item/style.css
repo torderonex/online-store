@@ -6,11 +6,15 @@
     gap: 16px;
     color:#0F1113;
     cursor: pointer;
+    height: 200px;
+    width: auto;
 }
 
-.category-item img{
+.category-item .category-img{
     background-color: #FDFDFD;
     width: 124px;
+    border-radius:15px;
+
     height: 124px;
     padding: 20px;
 }

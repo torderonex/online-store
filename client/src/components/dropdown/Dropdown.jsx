@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import './style.css'
-
+import arrow from '../../assets/arrow-down.svg';
 export default function Dropdown({text, isOpen, setIsOpen, children}) {
   
   const toggleDropdown = () => {
@@ -19,7 +19,7 @@ export default function Dropdown({text, isOpen, setIsOpen, children}) {
 
   return (
     <>
-    <button onClick={toggleDropdown} className='dropdown'>{text} <img src='arrow-down.svg' className={isOpen ? 'rotate' : ''}/></button>
+    <button onClick={toggleDropdown} className='dropdown'>{text} <img src={arrow} className={isOpen ? 'rotate' : ''}/></button>
         
     <div className={['menu', isOpen ? 'open' : ''].join(' ')} >
       <div className="container">

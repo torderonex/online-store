@@ -1,10 +1,14 @@
 import React, {useState} from 'react'
 import './style.css'
-
 import InputSearch from '../input-search/InputSearch';
 import Dropdown from '../dropdown/Dropdown';
 import IconButton from '../ico-btn/IconButton';
 import {useNavigate} from 'react-router-dom'
+import logo from '../../assets/logo.svg';
+import heart from '../../assets/heart.svg';
+import glasses from '../../assets/glasses.svg';
+import chart from '../../assets/chart.svg';
+import user from '../../assets/user.svg';
 
 export default function Header({isDropdownOpen, setIsDropdownOpen}) {
     const navigator = useNavigate();
@@ -13,7 +17,7 @@ export default function Header({isDropdownOpen, setIsDropdownOpen}) {
     <div className="container">
          <header>
             <div className="logo_info" >
-                <img onClick={() => navigator('/')} src="logo.svg"/>
+                <img onClick={() => navigator('/')} src={logo}/>
                 <p>Лучшие цены<br/> в интернет-магазинах</p>
             </div>
             <div className='search'>
@@ -68,10 +72,10 @@ export default function Header({isDropdownOpen, setIsDropdownOpen}) {
                 <InputSearch placeholder={'Поиск товаров'}/>
             </div>
             <div className='ico-btns'>
-                <IconButton className='ico-btns-item' iconPath={'heart.svg'}/>
-                <IconButton className='ico-btns-item glasses' iconPath={'glasses.svg'}/>
-                <IconButton className='ico-btns-item glasses' iconPath={'chart.svg'}/>
-                <IconButton onClick={() => navigator('/signup')} className='ico-btns-item' iconPath={'user.svg'}/>
+                <IconButton className='ico-btns-item' iconPath={heart}/>
+                <IconButton className='ico-btns-item glasses' iconPath={glasses}/>
+                <IconButton className='ico-btns-item glasses' iconPath={chart}/>
+                <IconButton onClick={() => navigator('/signup')} className='ico-btns-item' iconPath={user}/>
             </div>
         </header>  
     </div>

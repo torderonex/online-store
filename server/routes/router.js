@@ -14,11 +14,11 @@ router.get('/device', DeviceController.getAll)
 router.post('/device', )
 
 //brand routes
-router.get('/brand')
+router.get('/brand', BrandController.getAll)
 router.post('/brand', BrandController.create)
 
 //type routes
-router.get('/type')
+router.get('/type', TypeController.getAll)
 router.post('/type', TypeController.create)
 
 //user routes

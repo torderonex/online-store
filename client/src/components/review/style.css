@@ -1,0 +1,9 @@
+.review{
+    border-radius: 20px;
+    background-color: #F2F5F9;
+    height: 100%;
+    flex: 1;
+    padding: 20px;
+    width: 400px;
+}
+

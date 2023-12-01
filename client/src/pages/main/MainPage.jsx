@@ -15,9 +15,10 @@ import { useNavigate } from 'react-router-dom'
 export default function MainPage() {
     const navigator = useNavigate();
 
-    // const {width} = useResize();
     const isWide = useMediaQuery('(min-width : 1500px )');
     const isSmall = useMediaQuery('(max-width : 850px )');
+
+    const items = useState([]);
 
     const [firstBannerState,setFirstBannerState] = useState('normal');
     const [secondBannerState, setSecondBannerState] = useState('small');
@@ -36,6 +37,10 @@ export default function MainPage() {
             setSecondBannerState('small');
         }
     }, [isWide,isSmall])
+
+    useEffect(() =>{
+        
+    },[])
 
     const settings = {
         dots: true,

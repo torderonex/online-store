@@ -1,5 +1,6 @@
   .main-btn {
-    display: flex;
+    /* display: flex; */
+    display: inline-flex;
     text-decoration: none;
     color: white;
     align-items: center;
@@ -9,6 +10,7 @@
     border-radius: 5px;
     overflow: hidden;
     gap: 8px;
+    flex-wrap: nowrap;
     height: 52px;
     font-weight: 700;
     cursor: pointer;

@@ -1,0 +1,46 @@
+.photo{
+    width: 300px;
+    height: 300px;
+}
+
+.photo img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.product-page_content{
+    margin: 60px 0;
+    display: flex;
+    gap:40px;
+}
+
+
+.product__price{
+    border-radius: 20px;
+    background-color: #F2F5F9;
+    height: 100%;
+    flex: 1;
+    padding: 20px;
+}
+
+.users-reviews{
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    margin: 60px 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .product-page_content{
+        flex-wrap: wrap;
+    }
+
+    .product__price{
+        order:2;
+    }
+
+    .product_about{
+        order:3;
+    }
+}

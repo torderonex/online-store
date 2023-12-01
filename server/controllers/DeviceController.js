@@ -1,4 +1,4 @@
-import {Device} from  '../models/models.js';
+import {Device,DeviceInfo} from  '../models/models.js';
 
 export default class DeviceController{
 

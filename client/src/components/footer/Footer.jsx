@@ -1,5 +1,6 @@
 import React from 'react'
-
+import logo from '../../assets/logo.svg';
+import code from '../../assets/qrcode.jfif'
 import './style.css'
 
 export default function Footer() {
@@ -7,8 +8,8 @@ export default function Footer() {
     <footer>
         <div className="container">
           <div className="logo">
-            <img src="logo.svg"/>
-            <img className='qrcode' src="qrcode.jfif"/>
+            <img src={logo}/>
+            <img className='qrcode' src={code}/>
           </div>
           <div className="footer-lists">
             <ul className="to-user footer-list">

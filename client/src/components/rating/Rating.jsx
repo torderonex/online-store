@@ -1,5 +1,9 @@
 import React from 'react'
 
+import halfStarSvg from '../../assets/half-star.svg'
+import redStarSvg from '../../assets/red-star.svg'
+import grayStarSvg from '../../assets/gray-star.svg'
+
 import './style.css'
 
 export default function Rating({rating, ratesCount}) {
@@ -9,15 +13,19 @@ export default function Rating({rating, ratesCount}) {
   const halfStar = rating % 1 >= 0.5 ? 1 : 0;
   const emptyStars = maxRating - fullStars - halfStar;
 
-  const fullStarsArray = Array(fullStars).fill(<img src="red-star.svg"/>);
-  const halfStarArray = Array(halfStar).fill(<img src="half-star.svg"/>);
-  const emptyStarsArray = Array(emptyStars).fill(<img src="gray-star.svg"/>);
+  const fullStarsArray = Array(fullStars).fill(<img src={redStarSvg} alt="*"/>);
+  const halfStarArray = Array(halfStar).fill(<img src={halfStarSvg} alt="*"/>);
+  const emptyStarsArray = Array(emptyStars).fill(<img src={grayStarSvg} alt="-"/>);
 
   const stars = [...fullStarsArray, ...halfStarArray, ...emptyStarsArray];
     
     return (
-    <div className='rate-bar'>
-        <p>{rating} </p> <div>{stars.map(star => star)}</div> <p>{ratesCount} отзывов</p>
+    <div className='rate-bar' style={{backgroundColor: !ratesCount ? "white" : null}}>
+        <p>{rating} </p>
+        <div>
+          {stars.map(star => <React.Fragment key={Math.random()}>{star}</React.Fragment>)}
+        </div>
+        {ratesCount && <p>{ratesCount} отзывов</p>}
     </div>
   )
 }

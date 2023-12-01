@@ -4,6 +4,7 @@ import './style.css'
 import Rating from '../rating/Rating'
 import Button from '../button/Button'
 import IconButton from "../ico-btn/IconButton";
+import { formatPrice } from '../../utils/formatPrice';
 
 export default function ProductCard({product, long}) {
   return (
@@ -19,7 +20,7 @@ export default function ProductCard({product, long}) {
           </div>
           <div className="name-price">
             <h3>{product.name}</h3>
-            <p>от {product.price}р.</p>
+            <p>от {formatPrice(product.price)}₽</p>
           </div>
           <Button text={'Перейти к товару'}/>
         </div>
@@ -41,7 +42,7 @@ export default function ProductCard({product, long}) {
         <img className='product-img' src={product.img}/>
 
         <div className='price-rating'>
-            <div className='price-cart'><p>от {product.price}р.</p>
+            <div className='price-cart'><p>от {formatPrice(product.price)}₽</p>
                 <Button text={'К описанию'}/></div>
 
           <Rating rating={product.rating} ratesCount={product.ratesCount}/>

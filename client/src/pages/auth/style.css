@@ -5,8 +5,9 @@
     flex-direction: column;
     gap: 40px;
     padding: 48px;
+    justify-content: space-between;
     width: 381px;
-    height: 307px;
+    /* height: 307px; */
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
 }
@@ -18,26 +19,28 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
+    justify-content: space-between;
+    
     width: 381px;
-    height: 307px;
+    /* height: 307px; */
     border-top-right-radius: 12px;
     border-bottom-right-radius:12px;
 }
 
+
+
+.signup-form{
+    align-items: stretch;
+    display: flex;
+    justify-content: center;
+    margin: 126px 0;
+    border-radius: 12px;
+}
 .login-footer{
     display: flex;
     width: 100% ;
     justify-content: space-between;
 }
-
-.signup-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 126px 0;
-    border-radius: 12px;
-}
-
 .gap-form{
     display: flex;
     flex-direction: column;

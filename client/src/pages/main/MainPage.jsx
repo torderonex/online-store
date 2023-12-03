@@ -6,11 +6,40 @@ import Button from '../../components/button/Button'
 import CategoryItem from '../../components/category-item/CategoryItem'
 import ProductCard from '../../components/product-card/ProductCard'
 import AboutCard from '../../components/about-card/AboutCard'
-import Slider from 'react-slick'
+import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick-theme.css";
 import { useMediaQuery } from "@uidotdev/usehooks";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import DeviceService from '../../services/DeviceService';
+import { formatPrice } from '../../utils/formatPrice'
+const settings = {
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true,
+    arrows: false,
+    centerPadding: '60px',
+  };
+  const settings2 = {
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    arrows: false,
+    variableWidth: true,
+  };
+
+// const mockItem = {
+//     type: 'Смартфоны',
+//     name : 'Apple iPhone 13 Pro Max 256 ГБ серый',
+//     img : 'categories/smartphone.png',
+//     rating : 4.5,
+//     ratesCount : 493,
+//     price: 72000,
+// }
 
 export default function MainPage() {
     const navigator = useNavigate();
@@ -18,7 +47,8 @@ export default function MainPage() {
     const isWide = useMediaQuery('(min-width : 1500px )');
     const isSmall = useMediaQuery('(max-width : 850px )');
 
-    const items = useState([]);
+    const [items,setItems] = useState(null);
+    const [type, setType] = useState(1);
 
     const [firstBannerState,setFirstBannerState] = useState('normal');
     const [secondBannerState, setSecondBannerState] = useState('small');
@@ -38,47 +68,29 @@ export default function MainPage() {
         }
     }, [isWide,isSmall])
 
-    useEffect(() =>{
+    useEffect( ()=>{
+        async function fetchData(){
+            const devicesResp = await DeviceService.getDevices({typeId:1, limit:6});
+            console.log(devicesResp);
+            const devices = devicesResp.data.rows.map(elem => ({...elem, price:formatPrice(elem.price) }))
+            const typeResp = await DeviceService.getTypeById(type);
+            setItems({devices : devices, type: typeResp.data.name});
+        }
+        fetchData();
         
     },[])
+  
+    
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        centerMode: true,
-        variableWidth: true,
-        arrows: false,
-        centerPadding: '60px',
-      };
-      const settings2 = {
-        dots: false,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 1,
-        arrows: false,
-        variableWidth: true,
-      };
-
-    const mockItem = {
-        type: 'Смартфоны',
-        name : 'Apple iPhone 13 Pro Max 256 ГБ серый',
-        img : 'categories/smartphone.png',
-        rating : 4.5,
-        ratesCount : 493,
-        price: 72000,
+    const sldr = items && <Slider className='sldr' {...settings}>
+    {
+            items.devices.map(elem => (
+            <ProductCard key={elem.id} product={{...elem,type: items.type}} />
+        ))  
     }
-  
-    const sldr = <Slider className='sldr' {...settings}>
-    <ProductCard product={mockItem}/>
-    <ProductCard product={mockItem}/>
-    <ProductCard product={mockItem}/>
-    <ProductCard product={mockItem}/>
-    <ProductCard product={mockItem}/>
-    <ProductCard product={mockItem}/>
     </Slider> 
-  
+
+    
 
     return (
     <main>
@@ -110,14 +122,14 @@ export default function MainPage() {
                 {
                     isWide ? 
                     <div className="product-cards">
-                        <ProductCard product={mockItem}/>
-                        <ProductCard product={mockItem}/>
-                        <ProductCard product={mockItem}/>
-                        <ProductCard product={mockItem}/>
-                        <ProductCard product={mockItem}/>
-                        <ProductCard product={mockItem}/>
+                        {
+                           items && items.devices.map(elem => (
+                                <ProductCard key={elem.id} product={{...elem,type: items.type}} />
+                            ))
+                        }
+                       
                     </div> :
-                    sldr
+                     sldr 
                 }
                 
             </div>

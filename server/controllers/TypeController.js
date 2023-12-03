@@ -9,7 +9,14 @@ export default class TypeController{
     }
     
     static async getAll(req, res) {
-        const brands = await DeviceType.findAll()
+        const {id} = req.query;
+        let brands;
+        if(id){
+            brands = await DeviceType.findOne({where: {id}})
+            return res.json(brands)
+        }
+        brands = await DeviceType.findAll()
         return res.json(brands)
     }
+
 }

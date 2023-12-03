@@ -9,8 +9,13 @@ export default class DeviceService{
         return resp;
     }
 
-    static async getDevices(brandId, typeId, limit, page){
-        return await $api.get("device/")
+    static async getDevices(params){
+        const resp = await $api.get("device", {params})
+        resp.data.rows = resp.data.rows.map(elem => ({...elem, price: parseInt(elem.price)}))
+        return resp;
+    }
 
+    static async getTypeById(id){
+        return await $api.get("type",{params:{id}});
     }
 }

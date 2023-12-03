@@ -100,10 +100,17 @@
     margin: 0;
 }
 
+.product-img{
+    width: 100px;
+    height: 100px;
+}
+
 .product-card.long .product-img{
     width: 200px;
     height: 200px;
 }
+
+
 
 .product-card.long{
     flex-direction: row;
@@ -117,6 +124,10 @@
 .rating-icons{
     display: flex;
     justify-content: space-between;
+}
+
+.name-price{
+    margin: 0, 60px;
 }
 
 .product-card.long .name-price{

@@ -18,4 +18,14 @@ export default class DeviceService{
     static async getTypeById(id){
         return await $api.get("type",{params:{id}});
     }
+
+    static async getBrandsByType(typeId){
+        const resp = await $api.get("brand/type", {params:{typeId}})
+        const data = resp.data.map(item => ({
+            id: item.id,
+            typeId: item.device_types[0].id, 
+            brandName: item.name,
+        }));
+        return {...resp, data:data};
+    }
 }

@@ -15,7 +15,9 @@ router.post('/device', )
 
 //brand routes
 router.get('/brand', BrandController.getAll)
+router.get('/brand/type', BrandController.getByType)
 router.post('/brand', BrandController.create)
+
 
 //type routes
 router.get('/type', TypeController.getAll)

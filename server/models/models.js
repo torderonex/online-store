@@ -46,27 +46,7 @@ export const DeviceInfo = sequelize.define('device_info', {
     name:{type: DataTypes.STRING},
     value:{type: DataTypes.STRING},
 });
-let a = [{
-    deviceId: 2,
-    name: "Страна",
-    value:"Китай",
-},{
-    deviceId: 2,
-    name: "Экран",
-    value:"6.1'/2556x1179 Пикс",
-},{
-    deviceId: 2,
-    name: "Тип процессора",
-    value:"A17 Pro",
-},{
-    deviceId: 2,
-    name: "Встроенная память (ROM)",
-    value:"128 ГБ",
-},{
-    deviceId: 2,
-    name: "Оптическая стабилизация",
-    value:"Да",
-}   ]
+
 export const Review = sequelize.define('rating', {
     id:{type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     userId:{type: DataTypes.INTEGER, references: {model: User, key: 'id'}},
@@ -107,5 +87,5 @@ DeviceBrand.hasMany(Device)
 Device.belongsTo(DeviceBrand);
 
 DeviceBrand.belongsToMany(DeviceType, {through: TypeBrands});
-DeviceBrand.belongsToMany(DeviceType, {through: TypeBrands});
+DeviceType.belongsToMany(DeviceBrand, {through: TypeBrands});
 

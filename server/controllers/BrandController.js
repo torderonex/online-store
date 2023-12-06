@@ -1,4 +1,4 @@
-import {DeviceBrand} from '../models/models.js';
+import {DeviceBrand, TypeBrands, DeviceType} from '../models/models.js';
 
 export default class BrandController{
     static async create(req, res) {
@@ -10,5 +10,18 @@ export default class BrandController{
     static async getAll(req, res) {
         const brands = await DeviceBrand.findAll()
         return res.json(brands)
+    }
+
+    static async getByType(req,res){
+        const {typeId} = req.query;
+        const brands = await DeviceBrand.findAll({
+            include: [{
+                model: DeviceType,
+                through: { attributes: [] },
+                where: { id: typeId },
+            }],
+        });
+
+        return res.json(brands);
     }
 }

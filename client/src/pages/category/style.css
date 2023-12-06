@@ -109,6 +109,11 @@
     margin-bottom: 20px;
 }
 
+.brand-button.active{
+    color: #FF4D4D;
+}
+
+
 @media (max-width: 900px) {
     .category-items{
         width: 100%;

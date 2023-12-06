@@ -12,7 +12,7 @@ export const publicRoutes = [
         Component : Main
     },
     {
-        path: CATEGORY_ROUTE,
+        path: CATEGORY_ROUTE + ":id",
         Component : Category
     },
     {

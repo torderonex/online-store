@@ -4,7 +4,6 @@ import React,{useState} from "react";
 import PhoneHeader from "./components/phone-header/PhoneHeader";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import AppRouter from "./routes/AppRouter";
-
 function App() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -15,6 +14,8 @@ function App() {
   }
   const isWide = useMediaQuery('(min-width : 1500px )');
   
+
+
   return (
     <div className='App'>
       {

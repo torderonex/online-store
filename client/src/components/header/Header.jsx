@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import './style.css'
 import InputSearch from '../input-search/InputSearch';
 import Dropdown from '../dropdown/Dropdown';
@@ -9,10 +9,12 @@ import heart from '../../assets/heart.svg';
 import glasses from '../../assets/glasses.svg';
 import chart from '../../assets/chart.svg';
 import user from '../../assets/user.svg';
+import { Context } from '../..';
+import { observer } from 'mobx-react-lite';
 
-export default function Header({isDropdownOpen, setIsDropdownOpen}) {
+ function Header({isDropdownOpen, setIsDropdownOpen}) {
     const navigator = useNavigate();
-
+    const {store} = useContext(Context);
     return (
     <div className="container">
          <header>
@@ -73,7 +75,7 @@ export default function Header({isDropdownOpen, setIsDropdownOpen}) {
             </div>
             <div className='ico-btns'>
                 <IconButton className='ico-btns-item' iconPath={heart}/>
-                <IconButton className='ico-btns-item glasses' iconPath={glasses}/>
+                <IconButton onClick={() => {store.setIsBlind(!store.isBlind)}} className='ico-btns-item glasses' iconPath={!store.isBlind ? glasses : null}/>
                 <IconButton className='ico-btns-item glasses' iconPath={chart}/>
                 <IconButton onClick={() => navigator('/signup')} className='ico-btns-item' iconPath={user}/>
             </div>
@@ -82,3 +84,4 @@ export default function Header({isDropdownOpen, setIsDropdownOpen}) {
     
     );
 }
+export default observer(Header)

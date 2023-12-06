@@ -13,6 +13,9 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import { useNavigate } from 'react-router-dom';
 import DeviceService from '../../services/DeviceService';
 import { formatPrice } from '../../utils/formatPrice'
+import { speakText } from '../../utils/speakText'
+
+
 const settings = {
     dots: true,
     infinite: true,
@@ -71,7 +74,6 @@ export default function MainPage() {
     useEffect( ()=>{
         async function fetchData(){
             const devicesResp = await DeviceService.getDevices({typeId:1, limit:6});
-            console.log(devicesResp);
             const devices = devicesResp.data.rows.map(elem => ({...elem, price:formatPrice(elem.price) }))
             const typeResp = await DeviceService.getTypeById(type);
             setItems({devices : devices, type: typeResp.data.name});
@@ -98,11 +100,11 @@ export default function MainPage() {
             <div className="banners">
                 <Banner size={firstBannerState}>
                     <h1><span>1.8 млн</span> товаров в <span>2272</span> магазинах находи, сравнивай, выбирай!</h1>
-                    <Button onClick={() => navigator('/category')} text={'Перейти к категориям'}/>
+                    <Button onClick={() => navigator('/category/1')} text={'Перейти к категориям'}/>
                 </Banner>
                 <Banner size={secondBannerState}>
                     <h1><span>Топ-10 </span>смартфонов 2023 года</h1>
-                    <Button text={'Смотреть'}/>
+                    <Button onClick={() => navigator('/category/1')} text={'Смотреть'}/>
                 </Banner>
             </div>
         </div>

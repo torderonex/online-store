@@ -2,8 +2,13 @@ import React from 'react'
 import logo from '../../assets/logo.svg';
 import code from '../../assets/qrcode.jfif'
 import './style.css'
+import { useNavigate } from 'react-router-dom';
+import { CATEGORY_ROUTE } from '../../utils/consts';
 
 export default function Footer() {
+
+  const navigator = useNavigate();
+
   return (
     <footer>
         <div className="container">
@@ -21,7 +26,7 @@ export default function Footer() {
             </ul>
             <ul className="popular footer-list">
               <li>Популярные категории</li>
-              <li>Смартфоны</li>
+              <li onClick={() => navigator(CATEGORY_ROUTE + '1',{preventScrollReset:true})}>Смартфоны</li>
               <li>Ноутбуки</li>
               <li>Планшеты</li>
               <li>Умные часы</li>
